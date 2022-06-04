@@ -17,3 +17,12 @@
 .app-header h2 span {
   display: block;
 }
+
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--container-padding);
+  margin-inline: 1rem;
+  background-color: var(--color-white);
+  border-radius: var(--container-radius);
+}
