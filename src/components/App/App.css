@@ -1,7 +1,19 @@
 .app {
-
+  max-width: var(--app-width);
+  margin-top: 15%;
+  margin-inline: auto;
 }
 
-.app-container {
+.app-header {
+  margin-bottom: 4rem;
+}
 
+.app-header h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
+.app-header h2 span {
+  display: block;
 }

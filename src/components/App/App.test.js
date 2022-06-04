@@ -1,6 +1,11 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
+describe('App Component:', () => {
+  it('should render header text', () => {
+    render(<App />);
+
+    expect(screen.getByText('spli')).toBeDefined();
+    expect(screen.getByText('tter')).toBeDefined();
+  });
 });

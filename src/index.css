@@ -11,19 +11,27 @@
   /* Colors */
   --color-white: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
+
   --color-cyan: hsl(172, 67%, 45%);
   --color-cyan-0: hsl(189, 41%, 97%);
   --color-cyan-1: hsl(185, 41%, 84%);
   --color-cyan-2: hsl(184, 14%, 56%);
   --color-cyan-3: hsl(186, 14%, 43%);
   --color-cyan-4: hsl(183, 100%, 15%);
-  --primary-color: var(--color-cyan-1);
-  --color-background: var(--primary-color);
+
+  --color-primary: var(--color-cyan);
+  --color-background: var(--color-cyan-1);
+
+  /* Sizes */
+  --app-width: 960px;
+  --screen-desktop: 1440px;
+  --screen-mobile: 375px;
 }
 
 body {
   font-family: 'Space Mono';
   background-color: var(--color-background);
+  color: var(--color-cyan-3);
 }
 
 @font-face {
