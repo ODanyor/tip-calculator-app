@@ -43,13 +43,14 @@ function Input({
 
     if (validation) checkValidation(value);
 
-    if (onChangeCallback) onChangeCallback(value);
+    onChangeCallback?.(value);
   };
 
   return (
-    <div className={getClassName()}>
+    <div data-testid="input" className={getClassName()}>
       {icon}
       <input
+        data-testid="input-element"
         type={type}
         placeholder={placeholder}
         value={value}
@@ -62,7 +63,7 @@ Input.propTypes = {
   icon: PropTypes.node,
   type: PropTypes.oneOf([
     'number',
-  ]),
+  ]).isRequired,
   value: PropTypes.oneOfType([
     PropTypes.number,
   ]),
@@ -74,7 +75,6 @@ Input.propTypes = {
     onError: PropTypes.func.isRequired,
   }),
   onChange: PropTypes.func,
-  isInteger: PropTypes.bool,
   placeholder: PropTypes.string,
 };
 

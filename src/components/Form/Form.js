@@ -15,7 +15,7 @@ function Form() {
         placeholder="0"
         validation={{
           rules: [
-            { regexStr: '^0{2}', message: 'Can\'t be zero' },
+            { regexStr: '^0', message: 'Can\'t be zero' },
             { regexStr: '\\.', message: 'Must be an integer' },
           ],
           onError: console.log,
