@@ -12,7 +12,7 @@ describe('Button component:', () => {
     it('should fire callback', () => {
       const mockOnClick = jest.fn();
 
-      render(<Button onClick={mockOnClick} />);
+      render(<Button onClick={mockOnClick}>test-button-placeholder</Button>);
 
       fireEvent.click(screen.getByTestId('button'));
 
