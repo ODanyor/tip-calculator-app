@@ -1,0 +1,16 @@
+.icon {
+  width: auto;
+  height: 100%;
+  min-width: var(--font-size-medium);
+  min-height: var(--font-size-medium);
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+.icon--dollar {
+  background-image: url(/src/assets/images/icon-dollar.svg);
+}
+
+.icon--person {
+  background-image: url(/src/assets/images/icon-person.svg);
+}
