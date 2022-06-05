@@ -15,6 +15,7 @@
   /* Colors */
   --color-white: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
+  --color-red: hsl(9, 62%, 65%);
 
   --color-cyan: hsl(172, 67%, 45%);
   --color-cyan-light: hsl(173, 61%, 77%);
@@ -27,6 +28,7 @@
 
   --color-primary: var(--color-cyan);
   --color-background: var(--color-cyan-1);
+  --color-error: var(--color-red);
 
   /* Vars */
   --item-bottom-margin: 1.5rem;

@@ -12,7 +12,14 @@ function Form() {
       <Input
         icon={<Icon name="person" />}
         type="number"
-        placeholder="0" />
+        placeholder="0"
+        validation={{
+          rules: [
+            { regexStr: '^0{2}', message: 'Can\'t be zero' },
+            { regexStr: '\\.', message: 'Must be an integer' },
+          ],
+          onError: console.log,
+        }} />
     </form>
   );
 }

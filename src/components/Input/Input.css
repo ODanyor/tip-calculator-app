@@ -16,7 +16,8 @@
 .input input {
   font-family: inherit;
   background: none;
-  color: var(--color-cyan-4);
+  color: transparent;
+  text-shadow: 0 0 0 var(--color-cyan-4);
   font-size: var(--font-size-big);
   border-style: none;
   width: 100%;
@@ -37,4 +38,11 @@
 
 .input--right-aligned input {
   text-align: right;
+}
+
+.input--error,
+.input--error:focus-within {
+  outline-style: solid;
+  outline-color: var(--color-error);
+  outline-width: 2px;
 }
