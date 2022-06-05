@@ -8,6 +8,7 @@
   /* Font Size */
   --base-font-size: 24px;
   --font-size-large: 2.8rem;
+  --font-size-big: 1.2rem;
   --font-size-small: .8rem;
 
   --font-size-xxs: .4rem;
@@ -26,6 +27,8 @@
   --color-black: hsl(0, 0%, 0%);
 
   --color-cyan: hsl(172, 67%, 45%);
+  --color-cyan-light: hsl(173, 61%, 77%);
+  
   --color-cyan-0: hsl(189, 41%, 97%);
   --color-cyan-1: hsl(185, 41%, 84%);
   --color-cyan-2: hsl(184, 14%, 56%);
