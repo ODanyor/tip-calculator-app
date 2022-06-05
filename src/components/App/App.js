@@ -1,3 +1,4 @@
+import Display from '../Display/Display';
 import './App.css';
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
           <span>tter</span>
         </h2>
       </header>
-      <div className="app-container"></div>
+      <div className="app-container">
+        <Display />
+      </div>
     </div>
   );
 }
