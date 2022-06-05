@@ -1,4 +1,5 @@
-import Display from '../Display/Display';
+import Form from '../Form';
+import Display from '../Display';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         </h2>
       </header>
       <div className="app-container">
+        <Form />
         <Display />
       </div>
     </div>

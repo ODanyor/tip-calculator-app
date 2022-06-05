@@ -3,12 +3,12 @@
   width: 100%;
   padding: 1rem;
   border-style: none;
-  border-radius: 5px;
+  border-radius: var(--item-radius);
   background-color: var(--color-primary);
   color: var(--color-cyan-4);
   text-transform: uppercase;
   font-weight: bold;
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-medium);
 }
 
 .button:hover {
