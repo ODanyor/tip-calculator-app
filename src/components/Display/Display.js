@@ -5,7 +5,7 @@ import './Display.css';
 function Display() {
   return (
     <div className="display">
-      <div>
+      <div className="display-items">
         <Result
           name="Tip Amount"
           desc="person"

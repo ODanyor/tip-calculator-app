@@ -5,7 +5,7 @@ function Result({ name, desc, value }) {
   const getFormattedValue = (value) => value.toFixed(2);
 
   return (
-    <div className="result">
+    <div data-testid="result" className="result">
       <div className="result__label">
         <div className="result__name">{name}</div>
         <div className="result__desc">/ {desc}</div>
