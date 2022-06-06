@@ -1,3 +1,5 @@
 .form {
-
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: var(--grid-item-gap);
 }

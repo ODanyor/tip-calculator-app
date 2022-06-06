@@ -5,12 +5,11 @@ import './Input.css';
 
 function Input({
   icon,
-  type,
-  placeholder,
   validation,
-  value,
   onChange: onChangeCallback,
+  ...restProps
 }) {
+  const { type } = restProps;
   const [isError, setIsError] = useState(false);
 
   const getClassName = () => {
@@ -35,7 +34,10 @@ function Input({
       }
     }
 
-    if (isError) setIsError(false);
+    if (isError) {
+      setIsError(false);
+      validation.onError('');
+    }
   };
 
   const onChange = (event) => {
@@ -49,18 +51,15 @@ function Input({
   return (
     <div data-testid="input" className={getClassName()}>
       {icon}
-      <input
-        data-testid="input-element"
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange} />
+      <input data-testid="input-element" onChange={onChange} {...restProps} />
     </div>
   );
 }
 
 Input.propTypes = {
+  id: PropTypes.string,
   icon: PropTypes.node,
+  name: PropTypes.string,
   type: PropTypes.oneOf([
     'number',
   ]).isRequired,

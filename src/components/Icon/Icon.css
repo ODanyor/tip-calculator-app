@@ -1,10 +1,11 @@
 .icon {
   width: auto;
   height: 100%;
-  min-width: var(--font-size-medium);
-  min-height: var(--font-size-medium);
+  min-width: 15px;
+  min-height: 15px;
   background-size:contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .icon--dollar {

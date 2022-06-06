@@ -1,14 +1,15 @@
 .button {
   cursor: pointer;
   width: 100%;
-  padding: 1rem;
+  height: 55px;
   border-style: none;
   border-radius: var(--item-radius);
   background-color: var(--color-primary);
-  color: var(--color-cyan-4);
+  color: var(--color-primary-dark);
   text-transform: uppercase;
+  font-family: 'Space Mono';
   font-weight: bold;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-big);
 }
 
 .button:hover {

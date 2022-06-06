@@ -1,6 +1,6 @@
 .display {
   color: var(--color-white);
-  background-color: var(--color-cyan-4);
+  background-color: var(--color-primary-dark);
   padding: var(--container-padding);
   border-radius: var(--container-radius-2);
   display: flex;
