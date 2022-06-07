@@ -17,8 +17,7 @@
 .input input {
   font-family: inherit;
   background: none;
-  color: transparent;
-  text-shadow: 0 0 0 var(--color-primary-dark);
+  color: var(--color-primary-dark);
   font-size: var(--font-size-big);
   border-style: none;
   width: 100%;

@@ -41,11 +41,9 @@ function Input({
   };
 
   const onChange = (event) => {
-    const value = event.target.value;
+    if (validation) checkValidation(event.target.value);
 
-    if (validation) checkValidation(value);
-
-    onChangeCallback?.(value);
+    onChangeCallback?.(event);
   };
 
   return (
