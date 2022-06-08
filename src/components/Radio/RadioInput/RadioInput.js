@@ -14,7 +14,13 @@ function RadioInput({ id, type, name, value, placeholder }) {
   return (
     <label className="radio-input" htmlFor={id} onClick={clickHandle}>
       <input ref={radioRef} type="radio" name={name} value={inputValue} />
-      <Input id={id} type={type} placeholder={placeholder} onChange={changeHandle} style={{ textAlign: !inputValue && 'center' }} />
+      <Input
+        id={id}
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        onChange={changeHandle}
+        style={{ textAlign: !inputValue && 'center' }} />
     </label>
   );
 }

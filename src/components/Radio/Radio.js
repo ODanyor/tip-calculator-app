@@ -2,10 +2,8 @@ import PropTypes from 'prop-types';
 import './Radio.css';
 
 function Radio({ children, onChange }) {
-  const handleChange = (event) => onChange(event.target.value);
-
   return (
-    <div className="radio" onChange={handleChange}>
+    <div className="radio" onChange={onChange}>
       {children}
     </div>
   );
