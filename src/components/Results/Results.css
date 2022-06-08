@@ -1,4 +1,4 @@
-.display {
+.results {
   color: var(--color-white);
   background-color: var(--color-primary-dark);
   padding: var(--container-padding);
@@ -8,6 +8,6 @@
   justify-content: space-between;
 }
 
-.display-items > :not(:last-child) {
+.results-items > :not(:last-child) {
   margin-bottom: var(--item-bottom-margin);
 }
