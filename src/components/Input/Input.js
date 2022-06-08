@@ -23,14 +23,14 @@ function Input({
   };
 
   const checkValidation = (value) => {
-    for (const { regexStr, message } of validation.rules) {
+    for (const { regexStr, message } of validation.prohibitions) {
       const regex = new RegExp(regexStr, 'gi');
 
       if (regex.test(String(value))) {
         setIsError(true);
         validation.onError(message);
 
-        return;
+        return false;
       }
     }
 
@@ -38,10 +38,15 @@ function Input({
       setIsError(false);
       validation.onError('');
     }
+
+    return true;
   };
 
   const onChange = (event) => {
-    if (validation) checkValidation(event.target.value);
+    if (validation) {
+      const isValid = checkValidation(event.target.value);
+      if (!isValid) return;
+    }
 
     onChangeCallback?.(event);
   };
@@ -63,9 +68,10 @@ Input.propTypes = {
   ]).isRequired,
   value: PropTypes.oneOfType([
     PropTypes.number,
+    PropTypes.string,
   ]),
   validation: PropTypes.shape({
-    rules: PropTypes.arrayOf(PropTypes.shape({
+    prohibitions: PropTypes.arrayOf(PropTypes.shape({
       regexStr: PropTypes.string.isRequired,
       message: PropTypes.string,
     })).isRequired,
