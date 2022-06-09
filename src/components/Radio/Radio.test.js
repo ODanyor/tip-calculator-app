@@ -1,12 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Radio from './Radio';
 
-const mockProps = {
+const props = {
   onChange: jest.fn(),
 };
 
-const renderRadio = (props = {}) => render(
-  <Radio {...mockProps} {...props}>
+const renderRadio = (extraProps = {}) => render(
+  <Radio {...props} {...extraProps}>
     <input type="radio" value="mock-value-1" name="mock-name" placeholder="value-1" />
     <input type="radio" value="mock-value-2" name="mock-name" placeholder="value-2" />
   </Radio>
@@ -27,7 +27,9 @@ describe('Radio component:', () => {
 
       fireEvent.click(button);
 
-      expect(mockProps.onChange).toBeCalledWith('mock-value-1');
+      expect(props.onChange).toHaveBeenCalledWith(expect.objectContaining({
+        target: expect.objectContaining({ value: 'mock-value-1' }),
+      }));
     });
   });
 });
