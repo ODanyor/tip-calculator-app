@@ -1,5 +1,5 @@
 import Form from '../Form';
-import Display from '../Display';
+import Results from '../Results';
 import './App.css';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       </header>
       <div className="app-container">
         <Form />
-        <Display />
+        <Results />
       </div>
     </div>
   );

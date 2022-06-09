@@ -1,9 +1,16 @@
 import { render, screen } from '@testing-library/react';
-import Display from './Display';
+import Results from './Results';
+import { AppContextProvider } from '../../context/AppContext';
 
-describe('Display component:', () => {
+const renderResutls = (props = {}) => render(
+  <AppContextProvider>
+    <Results {...props} />
+  </AppContextProvider>
+);
+
+describe('Results component:', () => {
   it('should render properly', () => {
-    render(<Display />);
+    renderResutls();
 
     expect(screen.getByText('Tip Amount')).toBeDefined();
     expect(screen.getByText('Total')).toBeDefined();

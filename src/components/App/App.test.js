@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 jest.mock('../Form', () => () => <span>mock-form-component</span>);
-jest.mock('../Display', () => () => <span>mock-display-component</span>);
+jest.mock('../Results', () => () => <span>mock-display-component</span>);
 
 describe('App Component:', () => {
   it('should render app header', () => {
