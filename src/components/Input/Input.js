@@ -6,7 +6,7 @@ import './Input.css';
 function Input({
   icon,
   validation,
-  onChange: onChangeCallback,
+  onChange: onChangeProp,
   ...restProps
 }) {
   const { type } = restProps;
@@ -22,7 +22,7 @@ function Input({
     return baseClass;
   };
 
-  const checkValidation = (value) => {
+  const isValid = (value) => {
     for (const { regexStr, message } of validation.prohibitions) {
       const regex = new RegExp(regexStr, 'gi');
 
@@ -43,12 +43,9 @@ function Input({
   };
 
   const onChange = (event) => {
-    if (validation) {
-      const isValid = checkValidation(event.target.value);
-      if (!isValid) return;
-    }
+    if (validation && !isValid(event.target.value)) return;
 
-    onChangeCallback?.(event);
+    onChangeProp?.(event);
   };
 
   return (

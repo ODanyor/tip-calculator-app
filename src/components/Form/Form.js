@@ -23,7 +23,8 @@ function Form() {
           type="number"
           placeholder="0"
           value={bill}
-          onChange={changeHandle} />
+          onChange={changeHandle}
+        />
       </Label>
       <Label id="select-tip" title="Select Tip %">
         <Radio name="tip" onChange={changeHandle}>
@@ -52,7 +53,8 @@ function Form() {
             onError: setPeopleFieldError,
           }}
           value={people}
-          onChange={changeHandle} />
+          onChange={changeHandle}
+        />
       </Label>
     </form>
   );

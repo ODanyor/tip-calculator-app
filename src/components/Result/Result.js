@@ -2,7 +2,12 @@ import PropTypes from 'prop-types';
 import './Result.css';
 
 function Result({ name, desc, value }) {
-  const getFormattedValue = (value) => value.toFixed(2);
+  const getFormattedValue = (value) => {
+    const formattedValue = value.toFixed(2);
+    const MAX_LENGTH = 6;
+    
+    return formattedValue.slice(0, MAX_LENGTH);
+  }
 
   return (
     <div data-testid="result" className="result">
