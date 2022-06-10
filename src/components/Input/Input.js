@@ -6,7 +6,7 @@ import './Input.css';
 function Input({
   icon,
   validation,
-  onChange: onChangeCallback,
+  onChange: onChangeProp,
   ...restProps
 }) {
   const { type } = restProps;
@@ -45,7 +45,7 @@ function Input({
   const onChange = (event) => {
     if (validation && !isValid(event.target.value)) return;
 
-    onChangeCallback?.(event);
+    onChangeProp?.(event);
   };
 
   return (
