@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import useAppContext from '../../hooks/useAppContext';
 import Label from '../Label';
 import Input from '../Input';
@@ -15,14 +15,19 @@ function Form() {
 
   const changeHandle = (event) => updateAppContextValue(dispatch, event);
 
-  const renderRadioButtons = () => percentages.map(percentage => (
-    <RadioButton
-      id={`tip-${percentage}`}
-      name="tip"
-      value={percentage}
-      placeholder={`${percentage}%`}
-    />
-  ));
+  const renderRadioButtons = () => (
+    <Fragment>
+      {percentages.map(percentage => (
+        <RadioButton
+          key={percentage}
+          id={`tip-${percentage}`}
+          name="tip"
+          value={percentage}
+          placeholder={`${percentage}%`}
+        />
+      ))}
+    </Fragment>
+  );
 
   return (
     <form className="form">
