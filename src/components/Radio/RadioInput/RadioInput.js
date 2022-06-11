@@ -7,19 +7,19 @@ function RadioInput({ id, type, name, value, placeholder }) {
   const [inputValue, setInputValue] = useState(value);
   const radioRef = useRef(null);
 
-  const changeHandle = (event) => setInputValue(event.target.value);
+  const handleChange = (event) => setInputValue(event.target.value);
 
-  const clickHandle = () => radioRef.current.click();
+  const handleClick = () => radioRef.current.click();
 
   return (
-    <label data-testid="radio-input-label" className="radio-input" htmlFor={id} onClick={clickHandle}>
+    <label data-testid="radio-input-label" className="radio-input" htmlFor={id} onClick={handleClick}>
       <input data-testid="radio-input" ref={radioRef} type="radio" name={name} value={inputValue} />
       <Input
         id={id}
         type={type}
         name={name}
         placeholder={placeholder}
-        onChange={changeHandle}
+        onChange={handleChange}
         style={{ textAlign: !inputValue && 'center' }}
       />
     </label>
