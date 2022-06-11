@@ -1,6 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Results from './Results';
-import { AppContextProvider } from '../../context/AppContext';
+import { AppContextProvider, resetAppContext } from '../../context/AppContext';
+
+jest.mock('../../context/AppContext', () => ({
+  ...jest.requireActual('../../context/AppContext'),
+  resetAppContext: jest.fn(),
+}));
 
 const renderResutls = ({ context, ...props } = {}) => render(
   <AppContextProvider context={context}>
@@ -29,5 +34,15 @@ describe('Results component:', () => {
 
     expect(tipResult.textContent).toBe('$2.50');
     expect(totalResult.textContent).toBe('$52.50');
+  });
+
+  describe('when click on reset button', () => {
+    it('should call resetAppContext action', () => {
+      renderResutls();
+
+      fireEvent.click(screen.getByTestId('button'));
+
+      expect(resetAppContext).toHaveBeenCalled();
+    });
   });
 });
