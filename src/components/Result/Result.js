@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import './Result.css';
 
 function Result({ name, desc, value }) {
-  const getFormattedValue = (value) => {
+  const format = (value) => {
     const formattedValue = value.toFixed(2);
     const MAX_LENGTH = 6;
-    
+
     return formattedValue.slice(0, MAX_LENGTH);
-  }
+  };
 
   return (
     <div data-testid="result" className="result">
@@ -15,7 +15,7 @@ function Result({ name, desc, value }) {
         <div className="result__name">{name}</div>
         <div className="result__desc">/ {desc}</div>
       </div>
-      <span className="result__value">${getFormattedValue(value)}</span>
+      <span data-testid="result-value" className="result__value">${format(value)}</span>
     </div>
   );
 }

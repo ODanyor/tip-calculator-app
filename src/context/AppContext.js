@@ -27,17 +27,17 @@ function reducer(state, action) {
   }
 }
 
-function AppContextProvider({ children }) {
+function AppContextProvider({ children, context: contextProp }) {
   const context = useReducer(reducer, initialState);
 
   return (
-    <AppContext.Provider value={context}>
+    <AppContext.Provider value={contextProp || context}>
       {children}
     </AppContext.Provider>
   );
 }
 
-const changeAppContextValue = (dispatch, event) => {
+const updateAppContextValue = (dispatch, event) => {
   dispatch({ type: event.target.name, payload: event.target.value });
 };
 
@@ -48,6 +48,6 @@ const resetAppContext = (dispatch) => {
 export {
   AppContext,
   AppContextProvider,
-  changeAppContextValue,
+  updateAppContextValue,
   resetAppContext,
 };

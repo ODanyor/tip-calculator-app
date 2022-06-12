@@ -39,6 +39,7 @@
   --color-error: var(--color-red);
 
   /* Vars */
+  --base-font-family: 'Space Mono';
   --grid-item-gap: 2rem;
   --container-padding: 2rem;
   --container-radius: 1.6rem;
@@ -54,7 +55,7 @@
 }
 
 body {
-  font-family: 'Space Mono';
+  font-family: var(--base-font-family);
   background-color: var(--color-background);
   color: var(--color-cyan-3);
 }

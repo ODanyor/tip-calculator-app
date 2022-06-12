@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import useAppContext from '../../hooks/useAppContext';
 import { resetAppContext } from '../../context/AppContext';
 import Result from '../Result';
@@ -10,7 +10,7 @@ function Results() {
 
   const reset = useCallback(() => resetAppContext(dispatch), [dispatch]);
 
-  const getCalculations = useCallback(() => {
+  const { calculatedTip, calculatedTotal } = useMemo(() => {
     const amount = people || 1;
     const calculatedTip = bill * tip / 100 / amount;
     const calculatedTotal = bill / amount + calculatedTip;
@@ -20,8 +20,6 @@ function Results() {
       calculatedTotal,
     };
   }, [bill, tip, people]);
-
-  const { calculatedTip, calculatedTotal } = getCalculations();
 
   return (
     <div className="results">

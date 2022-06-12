@@ -1,17 +1,33 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import useAppContext from '../../hooks/useAppContext';
 import Label from '../Label';
 import Input from '../Input';
 import { Radio, RadioButton, RadioInput } from '../Radio';
 import Icon from '../Icon';
-import { changeAppContextValue } from '../../context/AppContext';
+import { updateAppContextValue } from '../../context/AppContext';
 import './Form.css';
+
+const percentages = [5, 10, 15, 25, 50];
 
 function Form() {
   const [{ bill, people }, dispatch] = useAppContext();
   const [peopleFieldError, setPeopleFieldError] = useState('');
 
-  const changeHandle = (event) => changeAppContextValue(dispatch, event);
+  const changeHandle = (event) => updateAppContextValue(dispatch, event);
+
+  const renderRadioButtons = () => (
+    <Fragment>
+      {percentages.map(percentage => (
+        <RadioButton
+          key={percentage}
+          id={`tip-${percentage}`}
+          name="tip"
+          value={percentage}
+          placeholder={`${percentage}%`}
+        />
+      ))}
+    </Fragment>
+  );
 
   return (
     <form className="form">
@@ -28,11 +44,7 @@ function Form() {
       </Label>
       <Label id="select-tip" title="Select Tip %">
         <Radio name="tip" onChange={changeHandle}>
-          <RadioButton id="tip-5" name="tip" value={5} placeholder="5%" />
-          <RadioButton id="tip-10" name="tip" value={10} placeholder="10%" />
-          <RadioButton id="tip-15" name="tip" value={15} placeholder="15%" />
-          <RadioButton id="tip-25" name="tip" value={25} placeholder="25%" />
-          <RadioButton id="tip-50" name="tip" value={50} placeholder="50%" />
+          {renderRadioButtons()}
           <RadioInput id="tip-custom" name="tip" type="number" placeholder="Custom" />
         </Radio>
       </Label>
